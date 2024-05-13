@@ -40,4 +40,24 @@ public class PlayerSpriteHandler : MonoBehaviour
         }
         
     }
+
+    //Richtung, in die der Spieler guckt, als Vektor
+    public Vector2 GetLookDir(){
+        if(_sr.sprite == upSprite){
+            return new Vector2(0,1);
+        }
+        else if(_sr.sprite == downSprite){
+            return new Vector2(0,-1);
+        }
+        else if(_sr.sprite == leftSprite){
+            return new Vector2(-1,0);
+        }
+        else if(_sr.sprite == rightSprite){
+            return new Vector2(1,0);
+        }
+
+        //Falls der Spieler kein 'Sprite' hat, wird ein Nullvektor returned
+        Debug.LogError("Spieler hat kein Sprite");
+        return Vector2.zero;
+    }
 }

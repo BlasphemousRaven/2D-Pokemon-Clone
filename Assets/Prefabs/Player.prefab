@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6510648420633503277}
   - component: {fileID: 5190176411055601970}
   - component: {fileID: 9153183984460285333}
-  - component: {fileID: 8767640263595585115}
-  m_Layer: 0
+  - component: {fileID: 8845534424413749157}
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1234496, y: 1.3397251}
   m_EdgeRadius: 0
---- !u!114 &8767640263595585115
+--- !u!114 &8845534424413749157
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,11 +130,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1410913598466678253}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5e90eb3269efd50b9fb3ac77434f8e0, type: 3}
+  m_Script: {fileID: 11500000, guid: b5fc1df5ff09a91b48c0993e8b7992c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yMax: 0.1
-  lerpingSpeed: 0.5
+  distance: 3
 --- !u!1 &7122084128722723925
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +145,7 @@ GameObject:
   - component: {fileID: 5506786309420122644}
   - component: {fileID: 3834541361563129970}
   - component: {fileID: 8684261498560345332}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +207,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 95666895110383d4fa76208bf0f66ee2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
