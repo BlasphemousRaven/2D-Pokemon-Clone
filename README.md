@@ -1,3 +1,4 @@
-<h1>Pokemon Klon</h1>
+<h1>Pokemon Clone</h1>
 
-<p> WASD zum bewegen </p>
+<p> Press WASD to move </p>
+<p> Press E to interact </p>
