@@ -8,18 +8,18 @@ public class BasicInteraction : MonoBehaviour,IInteractable
     UITextHandler _uiHandler;
     Canvas canvas;
 
-    private void Start(){
+
+    private void Awake(){
         _uiHandler = GameObject.FindObjectOfType<UITextHandler>();
+        canvas = _uiHandler.transform.parent.GetComponent<Canvas>();
     }
 
     void IInteractable.Interact(){
-        // activate UI
-        // print text or menu
 
-
-        StartCoroutine(_uiHandler.Type(objectInformation));
-
-
+        if(!canvas.gameObject.activeSelf){
+            canvas.gameObject.SetActive(true);
+            StartCoroutine(_uiHandler.Type(objectInformation));
+        }
     }
 
 }

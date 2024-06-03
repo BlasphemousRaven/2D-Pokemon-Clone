@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] float distance = 4f;
-
     PlayerSpriteHandler _sp;
     LayerMask _layer;
+    bool _isInteracting = false;
 
     private void Awake() {
         _sp = GetComponentInChildren<PlayerSpriteHandler>();  
@@ -15,7 +15,7 @@ public class PlayerInteraction : MonoBehaviour
     } 
 
     private void Update(){
-
+            
         if(Input.GetKeyDown(KeyCode.E)){
             TryInteraction(); 
         }
@@ -31,6 +31,19 @@ public class PlayerInteraction : MonoBehaviour
         //interagiert mit dem Objekt, falls dies das IInteractable interface hat
         if(hit.transform.GetComponent<IInteractable>() != null){
             hit.transform.GetComponent<IInteractable>().Interact();
+            ControllerEnabled(false);
+            _isInteracting = true;
         }
+
+    }   
+
+    public void ControllerEnabled(bool enable){
+       GetComponent<PlayerController>().enabled = enable;
     }
+
+    public void SetIsInteracting(bool interacting){
+        _isInteracting = interacting;
+    }
+
+    public bool GetIsInteracting() {return _isInteracting;}
 }

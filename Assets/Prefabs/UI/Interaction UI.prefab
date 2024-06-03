@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4322080252487860696}
   - component: {fileID: 1093280120222294660}
   - component: {fileID: 8550108688530510401}
+  - component: {fileID: 5006296020217295905}
   m_Layer: 5
   m_Name: Interaction UI
   m_TagString: Untagged
@@ -33,8 +34,8 @@ RectTransform:
   m_Children:
   - {fileID: 5943126847106921100}
   - {fileID: 7794515781095916966}
-  - {fileID: 5511971814120751780}
   - {fileID: 501462016329905581}
+  - {fileID: 5511971814120751780}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -105,6 +106,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5006296020217295905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491436416306774690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c8f5e1e8065b13b9ba00fcfa971675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4288573908627709858
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,8 +130,9 @@ GameObject:
   - component: {fileID: 6008077325370163711}
   - component: {fileID: 8658200893853493825}
   - component: {fileID: 6124001825316825903}
+  - component: {fileID: 8944690192987741866}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Interaction BTN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,7 +238,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8658200893853493825}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8944690192987741866}
+        m_TargetAssemblyTypeName: ButtonInteraction, Assembly-CSharp
+        m_MethodName: InteractWithButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8944690192987741866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4288573908627709858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dbf124e23f7a08c59f58d05984dd67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5190066186497749971
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 2866947236932542509}
+  textSpeed: 2
 --- !u!1 &7183218113780420423
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +413,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8146082711405461549}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -441,12 +480,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
+  m_fontSize: 20
   m_fontSizeBase: 25
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 20
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -459,7 +498,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 5
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -476,8 +515,8 @@ MonoBehaviour:
   m_IsTextObjectScaleStatic: 0
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -109.833435, w: -75.2121}
+  m_pageToDisplay: 2
+  m_margin: {x: -0.0000076293945, y: 0, z: -91.921814, w: -66.33611}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
