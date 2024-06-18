@@ -22,17 +22,23 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     private void TryInteraction(){
-        //Raycast vom Spieler in die Richtung, in die er guckt
+        //raycast to look direction of player
         Vector2 dir = _sp.GetLookDir();
         RaycastHit2D hit = Physics2D.Raycast(transform.position, dir,distance,_layer);
 
         if(hit.transform == null) return;
             
-        //interagiert mit dem Objekt, falls dies das IInteractable interface hat
+        //interacts with obj if it is of type IInteractable
         if(hit.transform.GetComponent<IInteractable>() != null){
             hit.transform.GetComponent<IInteractable>().Interact();
-            ControllerEnabled(false);
+
             _isInteracting = true;
+
+            //stops player movement (BUG FIX)
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+            //player can't move during interaction
+            ControllerEnabled(false);
         }
 
     }   

@@ -11,10 +11,11 @@ public class PlayerController : MonoBehaviour
 
   private void Awake() => _rigidbody = GetComponent<Rigidbody2D>();
   
+  
   private void Update(){
      GetInput();
   }
-   private void FixedUpdate(){    
+   private void FixedUpdate(){     
       MovePlayer();
    }
 
@@ -22,12 +23,12 @@ public class PlayerController : MonoBehaviour
     float xInput = Input.GetAxisRaw("Horizontal");
     float yInput = Input.GetAxisRaw("Vertical");
 
-    //kein Input
+    //no Input
     if(xInput == 0 && yInput == 0){
       _moveDir = new Vector2(0,0);
     }
 
-    //links - rechts
+    //left - right
     if(xInput>0){
       _moveDir = new Vector2(1,0);
     }
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
       _moveDir = new Vector2(-1,0);
     }
     
-    //hoch - runter
+    //up - down
     if(yInput>0){
       _moveDir = new Vector2(0,1);
     }
@@ -45,11 +46,15 @@ public class PlayerController : MonoBehaviour
   
   }
 
-  private void MovePlayer(){
-    //bewegt den Spieler
+  private void MovePlayer(){    
+    //moves the player
     _rigidbody.velocity = _moveDir * playerSpeed;
   }
   public Vector2 GetMoveDir(){
     return _moveDir;
   } 
+
+  public void ChangeMoveDir(Vector2 newMovDir){
+    _moveDir = newMovDir;
+  }
 }
