@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectInformation: The package I'm supposed to give to grandma. Should I pick it
-    up? [Press Space]
+    up? [Press E]
 --- !u!114 &6920891628952883554
 MonoBehaviour:
   m_ObjectHideFlags: 0

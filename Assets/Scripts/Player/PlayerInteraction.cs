@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Game.Combat;
+
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class PlayerInteraction : MonoBehaviour
     LayerMask _layer;
     bool _isInteracting = false;
 
+    GameObject _currentInteractable = null;
+
     private void Awake() {
         _sp = GetComponentInChildren<PlayerSpriteHandler>();  
         _layer = LayerMask.GetMask("Default");
@@ -16,7 +20,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update(){
             
-        if(Input.GetKeyDown(KeyCode.E)){
+        if(Input.GetKeyDown(KeyCode.E) && !_isInteracting){
             TryInteraction(); 
         }
     }
@@ -31,8 +35,13 @@ public class PlayerInteraction : MonoBehaviour
         //interacts with obj if it is of type IInteractable
         if(hit.transform.GetComponent<IInteractable>() != null){
             hit.transform.GetComponent<IInteractable>().Interact();
-
+            
             _isInteracting = true;
+
+            _currentInteractable = hit.transform.gameObject;
+
+            //interaction audio
+            GameObject.FindObjectOfType<AudioManager>().PlayAudioClip(ClipType.interact);
 
             //stops player movement (BUG FIX)
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -45,6 +54,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public void ControllerEnabled(bool enable){
        GetComponent<PlayerController>().enabled = enable;
+       GetComponent<PlayerShoot>().enabled = enable;
     }
 
     public void SetIsInteracting(bool interacting){
@@ -52,4 +62,6 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     public bool GetIsInteracting() {return _isInteracting;}
+
+    public GameObject GetInteractable() {return _currentInteractable;}
 }

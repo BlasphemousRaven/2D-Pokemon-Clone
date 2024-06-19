@@ -241,7 +241,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8944690192987741866}
         m_TargetAssemblyTypeName: ButtonInteraction, Assembly-CSharp
-        m_MethodName: InteractWithButton
+        m_MethodName: ExitInteraction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -480,12 +480,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 25
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 20
+  m_fontSizeMax: 25
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -515,7 +515,7 @@ MonoBehaviour:
   m_IsTextObjectScaleStatic: 0
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 2
+  m_pageToDisplay: 1
   m_margin: {x: -0.0000076293945, y: 0, z: -91.921814, w: -66.33611}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0

@@ -24,4 +24,7 @@ public class BasicInteraction : MonoBehaviour,IInteractable
         }
     }
 
+    public void ChangeObjectInfo(string info){
+        objectInformation = info;
+    }
 }

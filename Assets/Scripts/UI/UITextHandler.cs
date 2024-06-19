@@ -15,6 +15,7 @@ namespace Game.UI{
         //Text erscheint auf der UI 
         public IEnumerator Type(string words){
             string temp = "";
+            text.text = "";
 
             for(int i = 0; i<words.Length;i++){
                 temp += words[i];
