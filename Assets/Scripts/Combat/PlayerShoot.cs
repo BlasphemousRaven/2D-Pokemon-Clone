@@ -5,15 +5,22 @@ using UnityEngine;
 namespace Game.Combat{
     public class PlayerShoot : MonoBehaviour
     {   
+
+        [Header("Scene Tweaking")]
+        [SerializeField] bool canShoot = true;
         [Header("Projectile Information")]
         [SerializeField] GameObject projectilePrefab;  
         [SerializeField] float projectileLifetime = 7.5f;
+
+
 
         AudioManager audioManager;
 
         private void Awake() => audioManager = FindObjectOfType<AudioManager>();
 
         private void Update(){
+            if(!canShoot) return;
+
             if(Input.GetMouseButtonDown(0)){
 
                 //AUDIO

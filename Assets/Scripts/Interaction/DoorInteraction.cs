@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DoorInteraction : MonoBehaviour
 {
+
+    [SerializeField] int sceneToLoad;
     PlayerInteraction playerInteraction;
     private bool _canLeave = false;
     private bool _isLeaving = false;
@@ -17,7 +19,7 @@ public class DoorInteraction : MonoBehaviour
 
         if(interactingWithDoor && _canLeave && !_isLeaving){
             _isLeaving = true;
-            print("Peace!");
+            FindObjectOfType<SceneManagerScript>().LoadNextScene(sceneToLoad);
         }
     }
 

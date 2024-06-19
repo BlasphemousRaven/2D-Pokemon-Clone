@@ -23,6 +23,8 @@ public class SuitInteraction : MonoBehaviour
             _casePickedUp = true;
            Invoke("PickUpSuitCase",1.5f); 
            
+           //avoids text bug
+           FindObjectOfType<TextResetter>().ResetText();
         }
     }
 
